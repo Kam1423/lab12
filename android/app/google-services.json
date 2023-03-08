@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "996030009164",
+    "project_id": "fir-lab12-d1e7e",
+    "storage_bucket": "fir-lab12-d1e7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996030009164:android:84f9bf4d9a83110d94c9e9",
+        "android_client_info": {
+          "package_name": "com.example.lab12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996030009164-eibe0dhjngd8c9j25i8bpog7ihr702up.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_J3bRXCiKQFvmGZEtA93Fkjr4ojKiy5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996030009164-eibe0dhjngd8c9j25i8bpog7ihr702up.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
