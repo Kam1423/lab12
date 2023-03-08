@@ -68,8 +68,8 @@ class _RegisterPageState extends State<RegisterPage> {
               .signUpWithEmail(
                   _email.text, _password.text, _name.text, _tel.text)
               .then((value) => Navigator.pop(context));
-        },
-        child: Text("Sign Up"),
+          },
+          child: Text("Sign Up"),
       ),
     );
   }
