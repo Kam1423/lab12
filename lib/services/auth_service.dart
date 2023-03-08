@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   Future<void> signUpWithEmail(
@@ -12,13 +11,15 @@ class AuthService {
         email: email,
         password: password,
       );
+
+      //get UID (User ID) 
       final uid = credential.user!.uid;
       print(uid);
 
       // Store User infomation (name, tel) to FireStore
       FirebaseFirestore.instance.collection("Users").doc(uid).set({
         "name": name,
-        "tel": tel,
+        "tel": tel,  
       });
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -42,36 +43,4 @@ class AuthService {
     }
   }
 
-  /* Start Comment Here
-  Future<void> signInWithGoogle() async {
-    // Trigger the authentication flow
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
-    // Obtain the auth details from the request
-    final GoogleSignInAuthentication? googleAuth =
-        await googleUser?.authentication;
-
-    // Create a new credential
-    final credential = GoogleAuthProvider.credential(
-      idToken: googleAuth?.idToken,
-      accessToken: googleAuth?.accessToken,
-    );
-
-    // Once signed in, return the UserCredential
-    UserCredential userCredential =
-        await FirebaseAuth.instance.signInWithCredential(credential);
-    print(userCredential.user);
-  }
-
-  Future<void> addNewInfo(String name, String tel) async {
-    final currentUser = FirebaseAuth.instance.currentUser;
-    final uid = currentUser!.uid;
-
-    // Store User infomation (name, tel) to FireStore
-    FirebaseFirestore.instance.collection("Users").doc(uid).set({
-      "name": name,
-      "tel": tel,
-    });
-  }
-*/ // End Comment Here
 }
